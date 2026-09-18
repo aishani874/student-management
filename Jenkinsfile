@@ -27,10 +27,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh """
-                    docker stop ${CONTAINER_NAME} || true
-                    docker rm ${CONTAINER_NAME} || true
-                    docker run -d --name ${CONTAINER_NAME} -p 8080:8080 ${IMAGE_NAME}:${BUILD_NUMBER}
+                bat """
+                    docker stop %CONTAINER_NAME% 2>nul || exit 0
+                    docker rm %CONTAINER_NAME% 2>nul || exit 0
+                    docker run -d --name %CONTAINER_NAME% -p 8080:8080 %IMAGE_NAME%:%BUILD_NUMBER%
                 """
             }
         }
