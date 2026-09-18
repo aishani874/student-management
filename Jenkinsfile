@@ -9,7 +9,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'student-mgmt-app'
         CONTAINER_NAME = 'student-service'
-        DOCKER_BIN = '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe"'
+        DOCKER_BIN = 'C:\Users\tuhi8\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe'
     }
 
     stages {
