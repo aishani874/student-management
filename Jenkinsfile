@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'JDK21'
+        maven 'Maven3'
+    }
+
     environment {
         IMAGE_NAME = 'student-mgmt-app'
         CONTAINER_NAME = 'student-service'
